@@ -1,0 +1,145 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== 1. Grade de 9 Cards ===== */
+.grade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-item {
+    background: #4A90E2;
+    color: white;
+    font-weight: bold;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* ===== 2. Layout de Página com Grid ===== */
+.page-grid {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 400px auto;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.grid-header {
+    grid-area: header;
+    background: #4ECDC4;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+    background: #45B7D1;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+}
+
+.grid-main {
+    grid-area: main;
+    background: #96CEB4;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+}
+
+.grid-footer {
+    grid-area: footer;
+    background: #FF6B6B;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+/* ===== 3. Dashboard com 4 Cards ===== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card-info {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-info h3 {
+    margin-bottom: 10px;
+}
+
+.numero {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4A90E2;
+}
+
+.descricao {
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grade-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-grid {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .grade-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
